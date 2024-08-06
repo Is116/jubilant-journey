@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Records</title>
+</head>
+<body>
+    <h1>Attendance Records</h1>
+    <a href="{{ url_for('attendance.add_attendance', user_id=user_id) }}">Add Attendance</a>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Actions</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row.date }}</td>
+            <td>{{ row.time }}</td>
+            <td>
+                <a href="{{ url_for('attendance.edit_attendance', attendance_id=row.id, user_id=user_id) }}">Edit</a>
+                <a href="{{ url_for('attendance.delete_attendance', attendance_id=row.id, user_id=user_id) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('user.list_users') }}">Back to Users</a>
+</body>
+</html>

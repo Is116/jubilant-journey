@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Attendance</title>
+</head>
+<body>
+    <h1>Add Attendance</h1>
+    <form method="POST" action="{{ url_for('attendance.add_attendance', user_id=user_id) }}">
+        <label for="date">Date:</label>
+        <input aria-label="date" type="date" name="date" required><br>
+        <label for="time">Time:</label>
+        <input aria-label="time" type="time" name="time" required><br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
+

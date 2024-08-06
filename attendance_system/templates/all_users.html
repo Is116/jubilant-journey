@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+</head>
+<body>
+    <h1>Registered Users</h1>
+    {% if msg %}
+        <p style="color: green;">{{ msg }}</p>
+    {% endif %}
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.name }}</td>
+            <td>{{ row.email }}</td>
+            <td>
+                <a href="{{ url_for('user.edit_user', user_id=row.id) }}">Edit</a>
+                <a href="{{ url_for('user.delete_user', user_id=row.id) }}">Delete</a>
+                <a href="{{ url_for('attendance.view_attendance', user_id=row.id) }}">View Attendance</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('main.index') }}">Go back to Home</a>
+</body>
+</html>

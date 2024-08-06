@@ -1,5 +1,0 @@
-Flask
-opencv-python
-dlib
-numpy
-sqlite3
