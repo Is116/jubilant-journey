@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Fingerprint</title>
+</head>
+<body>
+    <h1>View Fingerprint</h1>
+    <p>{{ msg }}</p>
+    {% if fingerprint %}
+        <p>Fingerprint data is present.</p>
+    {% else %}
+        <p>No fingerprint data available.</p>
+    {% endif %}
+    <a href="{{ url_for('fingerprint.add_fingerprint', user_id=user_id) }}">Add Fingerprint</a>
+    <a href="{{ url_for('fingerprint.update_fingerprint', user_id=user_id) }}">Update Fingerprint</a>
+    <form method="POST" action="{{ url_for('fingerprint.delete_fingerprint', user_id=user_id) }}">
+        <button type="submit">Delete Fingerprint</button>
+    </form>
+    <br>
+    <a href="{{ url_for('user.list_users') }}">Back to Users</a>
+</body>
+</html>

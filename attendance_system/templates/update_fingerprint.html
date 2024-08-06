@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Fingerprint</title>
+</head>
+<body>
+    <h1>Update Fingerprint</h1>
+    <form method="POST" action="{{ url_for('fingerprint.update_fingerprint', user_id=user_id) }}">
+        <button type="submit">Scan and Update Fingerprint</button>
+    </form>
+</body>
+</html>

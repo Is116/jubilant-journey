@@ -26,6 +26,7 @@
                 <a href="{{ url_for('user.edit_user', user_id=row.id) }}">Edit</a>
                 <a href="{{ url_for('user.delete_user', user_id=row.id) }}">Delete</a>
                 <a href="{{ url_for('attendance.view_attendance', user_id=row.id) }}">View Attendance</a>
+                <a href="{{ url_for('fingerprint.view_fingerprint', user_id=row.id) }}">View Fingerprint</a>
             </td>
         </tr>
         {% endfor %}

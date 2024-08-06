@@ -8,10 +8,11 @@ def init_sqlite_db():
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
-            email TEXT
+            email TEXT,
+            fingerprint BLOB
         )
     ''')
-    
+
     conn.execute('''
         CREATE TABLE IF NOT EXISTS attendance (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -21,7 +22,7 @@ def init_sqlite_db():
             FOREIGN KEY (user_id) REFERENCES users (id)
         )
     ''')
-    
+
     print("Tables created successfully")
     conn.close()
 
